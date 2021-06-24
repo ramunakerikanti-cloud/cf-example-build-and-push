@@ -15,7 +15,7 @@ steps:
     title: Building Node.Js Docker Image
     type: build
     stage: build
-    image_name: sample-app
+    image_name: ramunakeriknati/sample-app
     working_directory: '.'
     tag: 'v1.0.0'
     dockerfile: Dockerfile
