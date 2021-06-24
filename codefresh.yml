@@ -26,4 +26,4 @@ steps:
     candidate: ${{build_my_app}}
     tag: 'v1.0.0'
     registry: ramunakerikanti
-    image_name: ramunakeriknati/sample-app
+    image_name: ramunakeriknati:sample-app
