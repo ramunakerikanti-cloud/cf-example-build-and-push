@@ -17,7 +17,7 @@ steps:
     stage: build
     image_name: sample-app
     working_directory: '.'
-    tag: 'master'
+    tag: 'v1.0.0'
     dockerfile: Dockerfile
   push_to_my_registry:
     stage: 'push'
