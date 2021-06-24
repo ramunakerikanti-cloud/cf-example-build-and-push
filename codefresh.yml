@@ -17,7 +17,7 @@ steps:
     stage: build
     image_name: ramunakeriknati/sample-app
     working_directory: '.'
-    tag: 'v1.0.0'
+    tag: 'v1.1.0'
     dockerfile: Dockerfile
   push_to_my_registry:
     stage: 'push'
