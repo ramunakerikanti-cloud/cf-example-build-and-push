@@ -27,3 +27,8 @@ steps:
     tag: 'v1.0.0'
     registry: ramunakerikanti
     image_name: ramunakeriknati/sample-app
+  MyCustomKubectlCommands:
+    title: Running Kubectl
+    image: codefresh/kubectl
+    commands: 
+      - kubectl get ns
