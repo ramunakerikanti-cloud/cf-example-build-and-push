@@ -28,10 +28,14 @@ steps:
     registry: ramunakerikanti
     image_name: ramunakeriknati/sample-app
     
-  deploy_to_k8:
-    title: deploying to cluster
-    type: deploy
-    kind: kubernetes 
-    cluster:  quick-demo
-    namespace: demo
-    file_path: ./deployment.yml
+ MyDeploy:
+    title: K8s Deploy
+    image: ramunakeriknati/sample-app
+    commands:
+      - kubectl apply -f deployment.yml   
+    environment:
+      - KUBECONTEXT=gke_elaborate-hash-315012_us-west1-c_quick-demo
+      - KUBERNETES_NAMESPACE=default
+      - MY_REPLICA_NUMBER=3 
+      - PULL_SECRET=ramunakerikanti
+
