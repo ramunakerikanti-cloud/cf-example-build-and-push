@@ -28,7 +28,7 @@ steps:
     registry: ramunakerikanti
     image_name: ramunakeriknati/sample-app
     
- deploy_to_k8:
+  deploy_to_k8:
     title: deploying to cluster
     type: deploy
     kind: kubernetes 
