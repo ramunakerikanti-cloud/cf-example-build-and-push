@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-svc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        revision: "{{CF_REVISION}}"
+      labels:
+        app: api-svc
+    spec:
+      containers:
+        - name: apisvc
+          image: ramunakeriknati/sample-app
+          ports:
+            - containerPort: 80
+              name: http
+
