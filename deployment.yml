@@ -1,21 +1,22 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-svc
+  name: nginx-deployment
+  labels:
+    app: nginx
 spec:
-  replicas: 1
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
   template:
     metadata:
-      annotations:
-        revision: "{{CF_REVISION}}"
       labels:
-        app: api-svc
+        app: nginx
     spec:
       containers:
-        - name: apisvc
-          image: ramunakeriknati/sample-app
-          ports:
-            - containerPort: 80
-              name: http
-
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
