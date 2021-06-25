@@ -27,13 +27,4 @@ steps:
     tag: 'v1.0.0'
     registry: ramunakerikanti
     image_name: ramunakeriknati/sample-app
-  deploy:
-    title: Deploying to Production using Kustomize...
-    type: freestyle
-    working_directory: ${{clone}}
-    arguments:
-      image: codefresh/kubectl:1.14.9
-      commands:
-        - kubectl config use-context gke_elaborate-hash-315012_us-west1-c_quick-demo
-        - kubectl get pods
    
