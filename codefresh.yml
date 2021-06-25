@@ -34,4 +34,4 @@ steps:
     commands: 
       - kubectl config get-contexts
       - kubectl config use-context "gke_elaborate-hash-315012_us-west1-c_quick-demo"
-      - kubectl apply -f deployment
+      - kubectl apply -f ./deployment
