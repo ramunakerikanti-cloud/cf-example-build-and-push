@@ -27,4 +27,15 @@ steps:
     tag: 'v1.0.0'
     registry: ramunakerikanti
     image_name: ramunakeriknati/sample-app
+    
+  MyDeploy:
+    title: K8s Deploy
+    image: codefresh/cf-deploy-kubernetes:master
+    commands:
+      - /cf-deploy-kubernetes deployment.yml               
+    environment:
+      - KUBECONTEXT=gke_elaborate-hash-315012_us-west1-c_quick-demo
+      - KUBERNETES_NAMESPACE=default
+      - MY_REPLICA_NUMBER=3
+      - KUBERNETES_DEPLOYMENT_TIMEOUT=360
    
