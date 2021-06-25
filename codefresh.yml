@@ -28,14 +28,16 @@ steps:
     registry: ramunakerikanti
     image_name: ramunakeriknati/sample-app
     
- MyDeploy:
+  MyDeploy:
     title: K8s Deploy
-    image: ramunakeriknati/sample-app
+    image: codefresh/cf-deploy-kubernetes
     commands:
-      - kubectl apply -f deployment.yml   
+      - /cf-deploy-kubernetes deployment.yml 
+      - /cf-deploy-kubernetes service.yml   
     environment:
-      - KUBECONTEXT=gke_elaborate-hash-315012_us-west1-c_quick-demo
-      - KUBERNETES_NAMESPACE=default
+      - KUBECONTEXT=kostis-demo@FirstKubernetes
+      - KUBERNETES_NAMESPACE=my-namespace
+      - MY_CUSTOM_LABEL=build-id-${{CF_BUILD_ID}} 
       - MY_REPLICA_NUMBER=3 
-      - PULL_SECRET=ramunakerikanti
+      - PULL_SECRET=codefresh-generated-r.cfcr.io-cfcr-my-namespace
 
